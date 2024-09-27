@@ -7,8 +7,8 @@ app.get('/', (_req, res) => {
   const a = 1;
   const b = 2;
   const c = 1 + 2;
-  if ( a == b ) {
-    console.log('a equals b')
+  if (a === b) { // Use strict equality
+    console.log('a equals b');
   }
   console.log('1+2='+c);
 
@@ -19,7 +19,7 @@ app.get('/', (_req, res) => {
 });
 
 // Unused variable
-let unusedVariable = 42; // This variable is never used
+// let unusedVariable = 42; // This variable is never used
 
 let server;
 
@@ -28,19 +28,22 @@ const hello1 = (a, b) => {
   return a + b;
 }
 
-// Unused function
-const hello3 = (x) => {
-  return x * 2; // This function is never called
-}
+// Unused function removed
+// const hello3 = (x) => {
+//   return x * 2; // This function is never called
+// }
 
 const hello2 = (a, b) => {
   console.log('hello2', a, b);
   return a + b;
 }
 
+// Define PI as a constant
+const PI = Math.PI;
+
 // Potential bug: using a magic number
 function calculateArea(radius) {
-  return Math.PI * radius * radius; // Magic number PI
+  return PI * radius * radius; // Use defined constant
 }
 
 function startServer() {
